@@ -7,6 +7,12 @@ refreshButton.addEventListener('click', () => {
   Api.getScores();
 });
 
+const form = document.querySelector('.add-score');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  Api.addScore();
+});
+
 
 document.onreadystatechange = function () {
   if (document.readyState !== "complete") {
@@ -19,3 +25,6 @@ document.onreadystatechange = function () {
     document.querySelector("body").style.visibility = "visible";
   }
 };
+
+
+consoleText(['Add your score'], 'text', ['#dfbfbf']);
