@@ -1,13 +1,16 @@
 const consoleText = (words, id, colors) => {
   if (colors === undefined) colors = ['#fff'];
+
   let visible = true;
   const con = document.getElementById('console');
   let letterCount = 1;
   let x = 1;
   let waiting = false;
   const target = document.getElementById(id);
+
   target.setAttribute('style', `color:${colors[0]}`);
   window.setInterval(() => {
+
     if (letterCount === 0 && waiting === false) {
       waiting = true;
       target.innerHTML = words[0].substring(0, letterCount);
@@ -33,7 +36,9 @@ const consoleText = (words, id, colors) => {
       letterCount += x;
     }
   }, 120);
+
   window.setInterval(() => {
+
     if (visible === true) {
       con.className = 'console-underscore hidden';
       visible = false;
